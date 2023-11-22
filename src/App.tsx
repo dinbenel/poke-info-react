@@ -11,7 +11,7 @@ function App() {
         <RootContextProvider>
           <Routes>
             {routes.map(({ element, path }) => {
-              return <Route path={path} element={element()} />;
+              return <Route path={path} element={element()} key={path} />;
             })}
           </Routes>
         </RootContextProvider>
