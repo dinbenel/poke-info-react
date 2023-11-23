@@ -16,7 +16,7 @@ const Header = () => {
       <nav className='flex items-center justify-between container'>
         <section className='flex items-center justify-center'>
           <div>
-            <PokeBallSvg className='h-20' />
+            <PokeBallSvg className='w-24' />
           </div>
           <span>poke-info</span>
         </section>
