@@ -5,6 +5,8 @@ import { Button } from '../ui/button';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema } from '@/validations/login.schema';
 import { registerSchema } from '@/validations/register.schema';
+import { observer } from 'mobx-react';
+import { useAppContext } from '@/providers/RootStore.provider';
 
 type Props = {
   initialValues: IRegisterFormValue | ILoginFormValue;
@@ -12,6 +14,7 @@ type Props = {
 };
 
 const Logister = ({ initialValues, children }: Props) => {
+  const { authStore } = useAppContext();
   const schema =
     'userName' in initialValues
       ? zodResolver(registerSchema)
@@ -30,7 +33,12 @@ const Logister = ({ initialValues, children }: Props) => {
   });
 
   const onSubmit: SubmitHandler<typeof initialValues> = async (values) => {
-    console.log(values);
+    if ('userName' in values) {
+      await authStore.register(values);
+      resetForm();
+      return;
+    }
+    await authStore.login(values);
     resetForm();
   };
 
@@ -56,4 +64,4 @@ const Logister = ({ initialValues, children }: Props) => {
   );
 };
 
-export default Logister;
+export default observer(Logister);
