@@ -7,6 +7,9 @@ import { loginSchema } from '@/validations/login.schema';
 import { registerSchema } from '@/validations/register.schema';
 import { observer } from 'mobx-react';
 import { useAppContext } from '@/providers/RootStore.provider';
+import { RxAvatar } from 'react-icons/rx';
+import SocialButton from '../SocialButton/SocialButton.component';
+import { Separator } from '../ui/separator';
 
 type Props = {
   initialValues: IRegisterFormValue | ILoginFormValue;
@@ -29,7 +32,6 @@ const Logister = ({ initialValues, children }: Props) => {
   } = useForm({
     defaultValues: initialValues,
     resolver: schema,
-    mode: 'onChange',
   });
 
   const onSubmit: SubmitHandler<typeof initialValues> = async (values) => {
@@ -49,7 +51,7 @@ const Logister = ({ initialValues, children }: Props) => {
 
   return (
     <form
-      className='flex flex-col w-[25%] gap-6'
+      className='flex flex-col w-[25%] gap-6 bg-gray-900 p-4 capitalize'
       onSubmit={handleSubmit(onSubmit)}
     >
       {Children.map(children, (child) => {
@@ -59,7 +61,16 @@ const Logister = ({ initialValues, children }: Props) => {
           errors,
         });
       })}
-      <Button>submit</Button>
+      <Button className='w-full capitalize font-medium text-base'>
+        submit
+      </Button>
+      <div className='flex items-center gap-2 w-full'>
+        <Separator className='bg-white' />
+        <span className='text-lg'>or</span>
+        <Separator className='bg-white' />
+      </div>
+      <SocialButton title='github' />
+      <SocialButton title='google' />
     </form>
   );
 };

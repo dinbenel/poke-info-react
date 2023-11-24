@@ -6,7 +6,7 @@ function App() {
   return (
     <div className='dark'>
       <Header />
-      <main className='bg-foreground min-h-[89dvh]'>
+      <main className='bg-foreground'>
         <Routes>
           {routes.map(({ element: Component, path }) => {
             return <Route path={path} element={<Component />} key={path} />;

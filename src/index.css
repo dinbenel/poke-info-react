@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  min-height: 100dvh;
-}
-
 @layer base {
   :root {
     --background: 240 6% 12%;
@@ -76,5 +72,8 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  input[aria-invalid='true'] {
+    @apply ring ring-rose-700 focus:ring focus:ring-rose-700;
   }
 }
