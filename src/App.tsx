@@ -4,16 +4,16 @@ import { Header } from './components';
 
 function App() {
   return (
-    <>
+    <div className='dark'>
       <Header />
-      <main>
+      <main className='bg-foreground'>
         <Routes>
           {routes.map(({ element: Component, path }) => {
             return <Route path={path} element={<Component />} key={path} />;
           })}
         </Routes>
       </main>
-    </>
+    </div>
   );
 }
 
