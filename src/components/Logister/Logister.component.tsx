@@ -7,7 +7,6 @@ import { loginSchema } from '@/validations/login.schema';
 import { registerSchema } from '@/validations/register.schema';
 import { observer } from 'mobx-react';
 import { useAppContext } from '@/providers/RootStore.provider';
-import { RxAvatar } from 'react-icons/rx';
 import SocialButton from '../SocialButton/SocialButton.component';
 import { Separator } from '../ui/separator';
 
