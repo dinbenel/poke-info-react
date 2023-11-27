@@ -1,5 +1,6 @@
 import { routeName } from '@/constants/routeNames';
 import { Home, Login, Pokemon, Register } from '@/pages';
+import PokemonDetails from '@/pages/PokemonDetails/PokemonDetails.page';
 
 export const routes = [
   {
@@ -17,5 +18,9 @@ export const routes = [
   {
     path: routeName.pokemon,
     element: Pokemon,
+  },
+  {
+    path: `${routeName.pokemon}/:pokeId`,
+    element: PokemonDetails,
   },
 ];

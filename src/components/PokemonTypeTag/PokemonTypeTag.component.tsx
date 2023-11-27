@@ -3,7 +3,7 @@ import { cn } from '@/utils/styles.utils';
 import { VariantProps, cva } from 'class-variance-authority';
 
 const tagVariants = cva(
-  'rounded-lg p-1 font-bold text-lg w-20 tracking-wider text-center text-neutral-800',
+  'rounded-lg p-2 font-bold text-lg w-20 tracking-wider text-center text-neutral-800',
   {
     variants: {
       variant: {
@@ -22,6 +22,7 @@ const tagVariants = cva(
         rock: 'bg-stone-400',
         ice: 'bg-indigo-300',
         ghost: 'bg-indigo-800',
+        steel: 'bg-slate-400',
       },
     },
   }
