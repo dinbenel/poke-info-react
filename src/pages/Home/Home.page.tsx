@@ -1,3 +1,4 @@
+import { PokemonPreview, PokemonPreviewLoader } from '@/components';
 import { useAppContext } from '@/providers/RootStore.provider';
 import { observer } from 'mobx-react';
 import { useEffect } from 'react';
@@ -9,15 +10,14 @@ const Home = () => {
   }, []);
 
   return (
-    <div className='flex flex-wrap'>
-      {pokemonStore.pokemon.map((poke) => {
-        return (
-          <div className='text-slate-800' key={poke._id}>
-            {poke.name}
-          </div>
-        );
-      })}
-    </div>
+    <section className='flex flex-col items-center justify-center container p-4 gap-10'>
+      <h2 className='mt-4 text-3xl capitalize'>chose your favorite</h2>
+      {pokemonStore.loading ? (
+        <PokemonPreviewLoader />
+      ) : (
+        <PokemonPreview pokemon={pokemonStore.pokemon} />
+      )}
+    </section>
   );
 };
 

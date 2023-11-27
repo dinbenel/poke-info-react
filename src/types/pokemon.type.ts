@@ -1,4 +1,4 @@
-export interface Pokemon {
+export interface IPokemon {
   height: number;
   _id: string;
   moves: Move[];
@@ -6,11 +6,15 @@ export interface Pokemon {
   order: number;
   sprites: Sprites;
   stats: Stat[];
-  types: any[];
+  types: IType[];
   weight: number;
 }
 
-export interface Type extends Ability {}
+export interface IType {
+  _id: string;
+  name: string;
+  url: string;
+}
 
 export interface Stat {
   base_stat: number;
