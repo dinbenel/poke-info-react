@@ -1,12 +1,12 @@
-import { Routes, Route } from 'react-router-dom';
-import { routes } from './Routes/routes';
-import { Header } from './components';
+import { Routes, Route } from "react-router-dom";
+import { routes } from "./Routes/routes";
+import { Header } from "./components";
 
 function App() {
   return (
-    <div className='dark'>
+    <div className="dark">
       <Header />
-      <main className='bg-foreground'>
+      <main className="bg-foreground">
         <Routes>
           {routes.map(({ element: Component, path }) => {
             return <Route path={path} element={<Component />} key={path} />;

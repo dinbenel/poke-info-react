@@ -1,15 +1,15 @@
-import { devConfig } from '@/config/dev.config';
-import axios from 'axios';
+import { appConfig } from "@/config";
+import axios from "axios";
 
 export class HttpClient {
   private _httpClient;
 
   constructor() {
     this._httpClient = axios.create({
-      baseURL: devConfig.baseUrl,
-      timeout: devConfig.timeout,
+      baseURL: appConfig.baseUrl,
+      timeout: appConfig.timeout,
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
 
