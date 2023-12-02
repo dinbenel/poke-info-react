@@ -18,10 +18,12 @@ class PokemonStore {
       setSelectedPokemon: action,
     });
   }
-  async getAllPokemon() {
+  async getAllPokemon(limit: number = 0) {
     this._setLoading(true);
     try {
-      const { data } = await this.pokemonApi.getAllPokemon();
+      const { data } = await this.pokemonApi.getAllPokemon({
+        limit,
+      });
       runInAction(() => {
         this.pokemon = data;
       });

@@ -1,4 +1,4 @@
 export const devConfig = {
-  baseUrl: 'http://localhost:5000/api/',
+  baseUrl: 'http://localhost:9000/api/',
   timeout: 6000,
 };

@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 const Home = () => {
   const { pokemonStore } = useAppContext();
   useEffect(() => {
-    pokemonStore.getAllPokemon();
+    pokemonStore.getAllPokemon(5);
   }, []);
 
   return (
